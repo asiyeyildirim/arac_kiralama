@@ -1,3 +1,5 @@
+#kaynak kurs:https://www.udemy.com/course/python-nesne-tabanli-programlama/learn/lecture/17461670#overview
+
 import datetime
 ###### parent class ######
 
@@ -148,7 +150,7 @@ class Customer:
           self.rentalTime_c=0
 
 
-     def requestVehicle():
+     def requestVehicle(self,brand):
 
           """ 
         take a request bike or car from customer

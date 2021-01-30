@@ -89,13 +89,13 @@ while True:
 
        elif choice==2:
             customer.rentalTime_c=car.rentHourly(customer.requestVehicle("car"))
-            customer:rentalBasis_c=1
+            customer.rentalBasis_c=1
             main_menu=True
             print(".............")
 
        elif choice==3:
             customer.rentalTime_c=car.rentDaily(customer.requestVehicle("car"))
-            customer:rentalBasis_c=2
+            customer.rentalBasis_c=2
             main_menu=True
             print(".............")
        elif choice==4:
