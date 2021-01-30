@@ -115,11 +115,16 @@ class VehicleRent:
 
 class CarRent(VehicleRent):
 
-    def __init__(self):
-       pass
+    global discount_rate
+    discount_rate=15
 
-    def discount():
-       pass
+    def __init__(self,stock):
+        super().__init__(stock)
+
+
+    def discount(self,b):
+       bill= b- (b*discount_rate)/100
+       return bill
 
     #### child class 2 ####
 
