@@ -130,26 +130,79 @@ class CarRent(VehicleRent):
 
 class BikeRent(VehicleRent):
       
-     def __init__(self):
-       pass
+     def __init__(self,stock):
+         super().__init__(stock)
+        
 
 #Customer
 
 class Customer:
 
      def __init__(self):
-       pass
-    
+          self.bikes=0
+          self.rentalBasis_b=0
+          self.rentalTime_b=0
+
+          self.cars=0
+          self.rentalBasis_c=0
+          self.rentalTime_c=0
+
+
      def requestVehicle():
 
           """ 
-         request vehicle
+        take a request bike or car from customer
      """
-     pass
+          if brand=="bike":
+              bikes=input("How many bikes would you like to rent?")
+              try:
+                bikes=int(bikes)
+              except ValueError:
+                print("Number should be number")
+                return-1
+              if bikes<1:
+                print("Number of Bikes should be greater than zero")
+                return-1
+              else:
+                   self.bikes=bikes
+                   return self.bikes
+                
+                
+          elif brand =="car":
+                cars=input("How many cars would you like to rent?")
+                try:
+                 cars=int(cars)
+                except ValueError:
+                 print("Number should be number")
+                return-1
 
-     def returnVehicle():
+                if cars<1:
+                 print("Number of cars should be greater than zero")
+                 return-1
+                else:
+                   self.cars=cars
+                   return self.cars
+          else:
+              print("Request vehicle error")
+
+
+     def returnVehicle(self,brand):
 
           """ 
-     return vehicle
+     return bikes or cars vehicle
      """
-     pass
+          if brand=="bike":
+              if self.rentalTime_b and self.rentalBasis_b and self.bikes:
+                  return self.rentalTime_b, self.rentalBasis_b, self.bikes
+              else:
+                  return 0,0,0
+              
+              
+          elif brand=="cars":
+              if self.rentalTime_c and self.rentalBasis_c and self.cars:
+                  return self.rentalTime_c, self.rentalBasis_c, self.cars
+              else:
+                  return 0,0,0
+
+          else:
+            print("Return vehicle error")
